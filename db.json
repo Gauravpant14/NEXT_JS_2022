@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title":"Rizon 5600",
+            "price":589,
+            "description": "A hot gaming and coding processor"
+        },
+        {
+            "id": 2,
+            "title":"Intel i5",
+            "price":500,
+            "description": "A Noraml perpose Processor"
+        },
+        {
+            "id": 3,
+            "title":"Intel i9",
+            "price":600,
+            "description": "A heavy game player"
+        },
+        {
+            "id": 4,
+            "title":"Rizon 9000",
+            "price":1000,
+            "description": "best processor for gaming"
+        }
+    ]
+}
