@@ -1,34 +1,55 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "title":"Rizon 7000",
-            "price":5869,
-            "description": "Buy this from amazon or flipcart or call this number"
-        },
-        {
-            "id": 2,
-            "title":"Intel i5",
-            "price":500,
-            "description": "A Noraml perpose Processor"
-        },
-        {
-            "id": 3,
-            "title":"Intel i9",
-            "price":600,
-            "description": "A heavy game player"
-        },
-        {
-            "id": 4,
-            "title":"Rizon 9000",
-            "price":1000,
-            "description": "best processor for gaming"
-        },
-        {
-            "id": 5,
-            "title":"Revalidate Key ",
-            "price":999,
-            "description": "automatically fetch data within given time period"
-        }
-    ]
+  "news": [
+    {
+      "id": 1,
+      "title": "News article 1",
+      "description": "Description 1",
+      "category": "sports"
+    },
+    {
+      "id": 2,
+      "title": "News article 2",
+      "description": "Description 2",
+      "category": "tech"
+    },
+    {
+      "id": 3,
+      "title": "News article 3",
+      "description": "Description 3",
+      "category": "sports"
+    }
+    
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Rizon 7000",
+      "price": 5869,
+      "description": "Buy this from amazon or flipcart or call this number"
+    },
+    {
+      "id": 2,
+      "title": "Intel i5",
+      "price": 500,
+      "description": "A Noraml perpose Processor"
+    },
+    {
+      "id": 3,
+      "title": "Intel i9",
+      "price": 600,
+      "description": "A heavy game player"
+    },
+    {
+      "id": 4,
+      "title": "Rizon 9000",
+      "price": 1000,
+      "description": "best processor for gaming"
+    },
+    {
+      "id": 5,
+      "title": "Revalidate Key ",
+      "price": 999,
+      "description": "automatically fetch data within given time period"
+    }
+  ]
 }

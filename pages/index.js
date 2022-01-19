@@ -22,6 +22,13 @@ function Home() {
     </Link>
     
     </div>
+    <div className="column is-one-fifth">
+
+    <Link href="/news" >
+      <button className="button is-primary">SSR Example</button>
+    </Link>
+    
+    </div>
     </div>
     
   </div>);
