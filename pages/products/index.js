@@ -3,20 +3,34 @@ import React from "react";
 
 const ProductList = ({ products }) => {
   return (
-    <div>
+    <div className="container">
+      <h1 className="title has-text-centered">Products List</h1>
+      <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth mt-4">
+        <thead>
+          <tr>
+            <th title="id">ID</th>
+            <th title="Title">Title</th>
+            <th title="Price">Price</th>
+            <th title="See full Description">Description</th>
+          </tr>
+        </thead>
+        <tbody>
       {products.map((e, i) => (
-        <div key={i}>
-          <span>{e.id}</span>
-          <h1>{e.title}</h1>
+        <tr key={i}>
+          <td>{e.id}</td>
+          <th>{e.title}</th>
           {/* <h2>{e.description}</h2> */}
-          <h3>{e.price}</h3>
+          <td>{e.price}</td>
+          <td>
           <Link href={`/products/${e.id}`} passHref>
             <button>See Full description</button>
           </Link>
-
-          <hr />
-        </div>
+          </td>
+        
+        </tr>
       ))}
+      </tbody>
+      </table>
     </div>
   );
 };
@@ -24,11 +38,14 @@ const ProductList = ({ products }) => {
 export default ProductList;
 
 export async function getStaticProps() {
+  console.log('generating list');
+  
   const response = await fetch("http://localhost:4000/products");
   const results = await response.json();
   return {
     props: {
       products: results,
     },
+    revalidate: 10
   };
 }

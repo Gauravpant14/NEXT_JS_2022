@@ -1,5 +1,4 @@
-import build from 'next/dist/build'
-import { delBasePath } from 'next/dist/shared/lib/router/router'
+
 import { useRouter } from 'next/router'
 import React from 'react'
 
@@ -39,16 +38,18 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    const { params } = context;
-    const response = await fetch(
-      `http://localhost:4000/products/${params.productId}`
+  const { params } = context;
+  
+  const response = await fetch(
+    `http://localhost:4000/products/${params.productId}`
     );
     const data = await response.json();
+    console.log(`Regen product ${params.productId}`);
     
-    console.log(`Generating page for /post/${params.postId }`)
     return {
       props: {
         product: data,
       },
+      revalidate: 10,
     };
   }

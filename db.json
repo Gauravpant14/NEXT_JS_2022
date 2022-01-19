@@ -2,9 +2,9 @@
     "products": [
         {
             "id": 1,
-            "title":"Rizon 5600",
-            "price":589,
-            "description": "A hot gaming and coding processor"
+            "title":"Rizon 7000",
+            "price":5869,
+            "description": "Buy this from amazon or flipcart or call this number"
         },
         {
             "id": 2,
@@ -23,6 +23,12 @@
             "title":"Rizon 9000",
             "price":1000,
             "description": "best processor for gaming"
+        },
+        {
+            "id": 5,
+            "title":"Revalidate Key ",
+            "price":999,
+            "description": "automatically fetch data within given time period"
         }
     ]
 }
