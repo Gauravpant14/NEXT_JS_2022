@@ -17,6 +17,12 @@
       "title": "News article 3",
       "description": "Description 3",
       "category": "sports"
+    },
+    {
+      "id": 4,
+      "title": "News article 4",
+      "description": "Description 4",
+      "category": "tech"
     }
     
   ],

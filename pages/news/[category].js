@@ -6,7 +6,7 @@ const ArticleByCategory = ({articles, category}) => {
     {
       articles.map((e) => {
         return(
-          <div >
+          <div key={e.id} >
             <h2 className="title">
               {e.id} {e.title}
             </h2>
@@ -21,7 +21,10 @@ const ArticleByCategory = ({articles, category}) => {
 export default ArticleByCategory;
 
 export async function getServerSideProps(context) {
-  const { params } = context;
+  const { params, req, res, query } = context;
+  console.log(query, 'query');
+  console.log(req.headers.cookie, 'cookie');
+  res.setHeader('Set-Cookie', ['name=Gaurav'])
   const { category } = params;
 
   const response = await fetch(
