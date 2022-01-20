@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const NewsArticleList = ({articles}) => {
+function NewsArticleList({articles}){
   return <div className="container has-text-centered">
       <h1 className="title">List of News Articles</h1>
       {articles.map(e => {return(
@@ -23,8 +23,8 @@ export async function getServerSideProps() {
 
     return {
         props: {
-            articles: data
-        }
-    }
+          articles: data,
+        },
+      };
 }
 

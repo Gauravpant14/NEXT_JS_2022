@@ -25,8 +25,7 @@ const ProductList = ({ products }) => {
           <Link href={`/products/${e.id}`} passHref>
             <button>See Full description</button>
           </Link>
-          </td>
-        
+          </td>       
         </tr>
       ))}
       </tbody>
