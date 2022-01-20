@@ -1,11 +1,15 @@
+import Link from "next/link";
+
 const NewsArticleList = ({articles}) => {
   return <div className="container has-text-centered">
       <h1 className="title">List of News Articles</h1>
       {articles.map(e => {return(
           <div key={e.id}>
+              <Link href={`news/${e.category}`}>
               <h2 className="subtitle">
                   {e.id} {e.title} | {e.category}
               </h2>
+              </Link>
           </div>
       )})}
   </div>;
