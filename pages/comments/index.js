@@ -8,6 +8,7 @@ function CommentPage() {
     if (comments.length == 0) {
       const response = await fetch("/api/comments");
       const result = await response.json();
+      if (result.length == 0) alert("No data found, please post data");
       setComments(result);
     } else {
       setComments([]);
@@ -28,9 +29,20 @@ function CommentPage() {
       const data = await response.json();
       alert("Posted Succesfully");
       fetchComments();
-      setComment('')
+      setComment("");
       setModalOpen(false);
     }
+  };
+
+  const deletePost = async (e) => {
+    const result = await fetch(`/api/comments/${e.id}`);
+    console.log(result);
+    const response = await result.json();
+    console.log(response);
+    alert("deleted");
+    const filterItem = comments.filter((item) => item.id !== e.id);
+    console.log(filterItem);
+    setComments(filterItem);
   };
 
   const openModal = () => {
@@ -41,13 +53,18 @@ function CommentPage() {
     <div className="container">
       <div className="box has-text-centered">
         {comments.length == 0 && (
-          <h1>No Data found, Press button for load data</h1>
+          <>
+            <h1>No Data found, Press button for load data</h1>
+          </>
         )}
         <div className="row ">
           {comments.map((e) => {
             return (
               <div key={e.id} className="rows box">
-                <h2 className="subtitle">{e.text}</h2>
+                <div>
+                  <h2 className="subtitle">{e.text}</h2>
+                  <button class="delete" onClick={() => deletePost(e)}></button>
+                </div>
               </div>
             );
           })}
@@ -58,12 +75,14 @@ function CommentPage() {
         >
           {comments.length == 0 ? "Load Comments" : "Reset"}
         </button>
-        <button
-          class="button is-danger is-outlined mt-4 ml-2"
-          onClick={openModal}
-        >
-          Post Comments
-        </button>
+      {comments.length ==0 && (
+          <button
+            class="button is-danger is-outlined mt-4 ml-2"
+            onClick={openModal}
+          >
+            Post Comments
+          </button>
+        )}
         <div className={`modal ${modalopen ? "is-active" : ""}`}>
           <div class="modal-background"></div>
           <div class="modal-card">
