@@ -6,10 +6,16 @@ function CommentPage() {
   const [modalopen, setModalOpen] = useState(false);
   const fetchComments = async () => {
     if (comments.length == 0) {
+      try{
       const response = await fetch("/api/comments");
       const result = await response.json();
+      // debugger;
       if (result.length == 0) alert("No data found, please post data");
       setComments(result);
+      }
+      catch(error) {
+        alert(error)
+      }
     } else {
       setComments([]);
     }
@@ -35,7 +41,9 @@ function CommentPage() {
   };
 
   const deletePost = async (e) => {
-    const result = await fetch(`/api/comments/${e.id}`);
+    const result = await fetch(`/api/comments/${e.id}`,{
+      method:'DELETE'
+    });
     console.log(result);
     const response = await result.json();
     console.log(response);
