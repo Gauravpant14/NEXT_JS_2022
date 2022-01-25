@@ -8,6 +8,7 @@ const deleteComment = async(id) => {
     const resultt = await fetch(`http://localhost:4000/comments/${id}`, options)
     console.log(resultt, 'fdsfdds')
    return resultt
+   . 
 }
 export default async function handler(req,res) {
     const {commentId} = req.query
