@@ -1,5 +1,5 @@
 import Image from "next/image"
-import img from '../public/five.jpg'
+import img from '/public/five.jpg'
 function TravelPage(){
 return (
     <div className="container">

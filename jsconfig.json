@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/layout/*":["components/layout/*"]
+        }
+    },
+    "exclude": ["node_modules"]
+}
