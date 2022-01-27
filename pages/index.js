@@ -6,12 +6,12 @@ const Home = () => {
     <div className="container">
       <div className="box">
         <h1 className="title has-text-centered">
-          API Routes Uses with examples
+          Image Use in next js with example
         </h1>
         <div className="row">
           <div className="rows has-text-centered">
-            <h2 className="sub-title">API GET/POST REQUEST</h2>
-            <Link href="/comments">
+            <h2 className="sub-title">Simple way of using Images</h2>
+            <Link href="/travel">
             <button className="button is-link is-outlined">See example</button>
             </Link>
           </div>
